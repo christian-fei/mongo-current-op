@@ -2,6 +2,7 @@
   "name": "mongo-current-op",
   "version": "1.0.0",
   "description": "",
+  "bin": "index.js",
   "main": "index.js",
   "scripts": {
     "start": "node $npm_package_main",
