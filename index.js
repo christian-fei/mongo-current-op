@@ -42,10 +42,10 @@ function main () {
     const jsonOutput = JSON.parse(result.stdout)
     const {inprog} = jsonOutput
     for (const op of inprog.slice(1)) {
-      console.log('--------------------------')
+      process.stdout.write('--------------------------\n')
 
       const rows = opToRows(op)
-      rows.forEach(r => console.log(r))
+      rows.forEach(r => process.stdout.write(`${r}\n`))
     }
   })
   .catch(console.error)
