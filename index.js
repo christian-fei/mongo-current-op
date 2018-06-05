@@ -6,11 +6,11 @@ if (require.main === module) {
   main()
 } else {
   module.exports = {
-    opToString
+    opToRows
   }
 }
 
-function opToString (op) {
+function opToRows (op) {
   const acc = []
   if (op.command) {
     if (op.command.u) {
@@ -44,7 +44,7 @@ function main () {
     for (const op of inprog.slice(1)) {
       console.log('--------------------------')
 
-      const rows = opToString(op)
+      const rows = opToRows(op)
       rows.forEach(r => console.log(r))
     }
   })

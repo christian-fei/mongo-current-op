@@ -1,10 +1,10 @@
 /* globals test */
 
 const assert = require('assert')
-const { opToString } = require('..')
+const { opToRows } = require('..')
 
-test('opToString: update', () => {
-  const resultUpdate = opToString({
+test('opToRows: update', () => {
+  const resultUpdate = opToRows({
     ns: 'collection',
     command: {
       u: 'MONGO_DESCRIPTION'
@@ -17,8 +17,8 @@ test('opToString: update', () => {
   ])
 })
 
-test('opToString: aggregate', () => {
-  const resultUpdate = opToString({
+test('opToRows: aggregate', () => {
+  const resultUpdate = opToRows({
     ns: 'database_name',
     command: {
       aggregate: 'collection',
@@ -32,8 +32,8 @@ test('opToString: aggregate', () => {
   ])
 })
 
-test('opToString: find', () => {
-  const resultUpdate = opToString({
+test('opToRows: find', () => {
+  const resultUpdate = opToRows({
     ns: 'database_name',
     command: {
       find: 'collection',
@@ -47,8 +47,8 @@ test('opToString: find', () => {
   ])
 })
 
-test('opToString: indexes', () => {
-  const resultUpdate = opToString({
+test('opToRows: indexes', () => {
+  const resultUpdate = opToRows({
     msg: 'CreateIndexes',
     command: {
       createIndexes: 'collection',
