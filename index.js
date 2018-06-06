@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const execa = require('execa')
+const stringify = require('json-stringify-pretty-compact')
 
 if (require.main === module) {
   main()
@@ -20,16 +21,16 @@ function opToRows (op) {
     }
     if (op.command.aggregate) {
       acc.push(`aggregate on "${op.command.aggregate}"`)
-      acc.push(JSON.stringify(op.command.pipeline))
+      acc.push(stringify(op.command.pipeline))
     }
     if (op.command.find) {
-      acc.push(`find on "${op.command.find}"`, JSON.stringify(op.command.filter))
+      acc.push(`find on "${op.command.find}"`, stringify(op.command.filter))
     }
   }
 
   if (op.msg) {
     acc.push(op.msg)
-    acc.push(`  on ${op.command.createIndexes} - ${JSON.stringify(op.command.indexes)}`)
+    acc.push(`  on ${op.command.createIndexes} - ${stringify(op.command.indexes)}`)
   }
 
   return acc

@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/christian-fei/mongo-current-op#readme",
   "dependencies": {
-    "execa": "^0.10.0"
+    "execa": "^0.10.0",
+    "json-stringify-pretty-compact": "^1.2.0"
   },
   "devDependencies": {
     "m.test": "0.0.57"
