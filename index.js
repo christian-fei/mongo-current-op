@@ -37,7 +37,7 @@ function opToRows (op) {
 }
 
 function main () {
-  execa(`mongo`, [process.argv[2], '--eval', '"JSON.stringify(db.currentOp())"', '--quiet'], {
+  execa(`mongo`, ['--eval', '"JSON.stringify(db.currentOp())"', '--quiet'], {
     shell: true
   }).then(result => {
     const jsonOutput = JSON.parse(result.stdout)

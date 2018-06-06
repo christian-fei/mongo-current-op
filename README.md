@@ -4,15 +4,19 @@
 
 ```
 npm install -g mongo-current-op
+
+# or
+
+npx mongo-current-op
 ```
 
 ## usage
 
 ```
-~/D/p/mongo-current-op (master →) npm start database_name
+~/D/p/mongo-current-op (master →) npm start
 
 > mongo-current-op@1.0.0 start /Users/christian/Documents/projects/mongo-current-op
-> node $npm_package_main "database_name"
+> node $npm_package_main
 
 --------------------------
 aggregate on "collection"
